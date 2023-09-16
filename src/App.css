@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Poltawski+Nowy:ital,wght@1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Neuton:wght@400;700&display=swap');
+
+
+:root{
+  --darkBlue:#141E46;
+  --offwhite:#EEEEEE;
+  --offwhite01:#f0f0f0;
+  --black08:#040D12;
+  --blue05:#313866;
+  --bangani:#5C5470;
+  --lightRed:#FF6969;
+  --offblue:#279EFF;
+  --darkblue01:#0c1627;
+  --greyblack:#1C1D20;
+  --purple:#27005D;
+  --purplehover: rgba(39, 0, 93,0.75);
+
+  --font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
+  --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+  --font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+  --font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+  --font-size-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
+  --font-size-xxl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+  --font-size-xxxl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
+
+  --font-nowy:'Poltawski Nowy',serif;
+  --font-acme:'Acme', sans-serif;
+  --font-neuton: 'Neuton', serif;
+}
+
+/* Navbar */
+body{
+  background-color: var(--darkblue01);
+}
+
+.NavbarMain{
+  width: 100%;
+  height: 60px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+}
+
+.Navtitle{
+  text-decoration: none;
+  font-size: var(--font-size-lg);
+  font-family: var(--font-nowy);
+  color: var(--offwhite);
+  margin-left: 1rem;
+}
+
+.socialIcons{
+  margin-right: 0.5rem;
+}
+
+.socialIcons > svg {
+  margin-right: 3px;
+  transition: transform 250ms ease-in-out;
+}
+
+.socialIcons > svg:hover{
+  transform: scale(1.1);
+}
+
+
+
+/* FirstTAb */
+
+.container{
+  width: 100%;
+}
+
+.firstTab{
+  width: 100%;
+  margin-inline:auto;
+  height: 550px;
+  background-color: var(--darkblue01);
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  grid-auto-flow: row;
+  gap: 10px;
+  grid-template-areas: 
+  "name"
+  "desc"
+  "content"
+  "extra";
+}
+
+.Name{
+  grid-area: name;
+  width: 100%;
+  height: 100px;
+  font-size: var(--font-size-xxl);
+  font-family: var(--font-acme);
+  display: flex;
+  justify-content: center;
+  color: var(--offwhite01);
+  margin: 8rem 0 0 0;
+}
+
+.Description{
+  grid-area: desc;
+  display: flex;
+  justify-content: center;
+  color: var(--bangani);
+  font-size: var(--font-size-md);
+  font-weight: bold;
+  font-family: var(--font-neuton);
+  word-wrap: break-word;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  flex-wrap: wrap;
+  transform: translateY(-30px);
+  padding-inline: 10px;
+  margin: 0;
+}
+
+.desc{
+  flex: 0 1 472px;
+}
+
+
+/* Language Slide */
+
+.Language-container{
+  grid-area: content; 
+  width: 100%;
+  height: auto;
+  overflow-x: scroll;
+}
+
+ .Language-container::-webkit-scrollbar{
+  display: none;
+}
+
+
+.FirstSlide{
+  display: inline-block;
+  width: 120%;
+}
+
+.SecondSlide{
+  display: inline-block;
+  width: 120%;
+}
+
+.FirstSlide > ul{
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  color: var(--offwhite01);
+  font-size: var(--font-size-md);
+  transform: translateX(-20px);
+  font-family: var(--font-neuton);
+  animation: slide 10s infinite linear;
+  gap: 10px;
+}
+
+.FirstSlide ul li{
+  flex: 0 0 200px;
+  background-color: var(--purple);
+  width: 200px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: rgba(9, 9, 10, 0.2) 0px 7px 29px 0px;
+  transition: 250ms ease-in-out;
+}
+
+.FirstSlide > ul > li:hover{
+  transform: scale(1.05);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: var(--purplehover);
+}
+
+.justScrollIcon{
+  display: flex;
+  justify-content: center;
+  filter: invert(1);
+}
+
+
+.SecondSlide > ul{
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  color: var(--offwhite01);
+  font-size: var(--font-size-md);
+  transform: translateX(-20px);
+  font-family: var(--font-neuton);
+  animation: slide 10s infinite linear;
+  gap: 10px;
+  text-transform: uppercase;
+}
+
+.SecondSlide ul li{
+  flex: 0 0 300px;
+  background-color: var(--purple);
+  width: 300px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: rgba(9, 9, 10, 0.2) 0px 7px 29px 0px;
+  transition: 250ms ease-in-out;
+}
+
+.SecondSlide > ul > li:hover{
+  transform: scale(1.05);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: var(--purplehover);
+}
