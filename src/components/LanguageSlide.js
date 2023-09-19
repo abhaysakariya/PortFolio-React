@@ -8,7 +8,7 @@ export default function LanguageSlide() {
     scrollContainer.addEventListener("wheel",(e) => {
       e.preventDefault();
       scrollContainer.style.scrollBehavior = "smooth";
-      scrollContainer.scrollLeft +=e.deltaY;
+      scrollContainer.scrollLeft += e.deltaY;
     });
   }, []);
   
