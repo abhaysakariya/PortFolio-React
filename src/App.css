@@ -54,6 +54,7 @@ body{
   font-family: var(--font-nowy);
   color: var(--offwhite);
   margin-left: 1rem;
+  cursor: default;
 }
 
 .socialIcons{
@@ -63,6 +64,7 @@ body{
 .socialIcons > svg {
   margin-right: 3px;
   transition: transform 250ms ease-in-out;
+  cursor: pointer;
 }
 
 .socialIcons > svg:hover{
@@ -122,6 +124,7 @@ body{
   justify-content: flex-start;
   color: var(--offwhite01);
   margin: 8rem 0 0 0;
+  cursor: default;
 }
 
 .Description{
@@ -140,6 +143,7 @@ body{
   flex-wrap: wrap;
   transform: translateY(-30px);
   margin: 0;
+  cursor: default;
 }
 
 .desc{
@@ -192,7 +196,7 @@ body{
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  cursor: pointer;
+  cursor: default;
   box-shadow: rgba(9, 9, 10, 0.2) 0px 7px 29px 0px;
   transition: 250ms ease-in-out;
 }
@@ -232,7 +236,7 @@ body{
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  cursor: pointer;
+  cursor: default;
   box-shadow: rgba(9, 9, 10, 0.2) 0px 7px 29px 0px;
   transition: 250ms ease-in-out;
 }
