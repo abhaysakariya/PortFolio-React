@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&family=Poltawski+Nowy:ital,wght@1,500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Neuton:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yatra+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
 
 
 :root{
@@ -27,6 +29,9 @@
   --font-nowy:'Poltawski Nowy',serif;
   --font-acme:'Acme', sans-serif;
   --font-neuton: 'Neuton', serif;
+  --font-yatra:'Yatra One', cursive;
+  --font-open-sans:'Open Sans', sans-serif;
+
 }
 
 /* Navbar */
@@ -42,10 +47,11 @@ body{
   justify-content: space-between;
   align-items: center;
   background: transparent;
+  white-space: nowrap;
   position: fixed;
   top: 0;
   left: 0;
-  white-space: nowrap;
+  z-index: 11111111;
 }
 
 .Navtitle{
@@ -69,6 +75,19 @@ body{
 
 .socialIcons > svg:hover{
   transform: scale(1.1);
+}
+
+.navcontent{
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 1rem;
+}
+
+.navcontent img{
+  width: 50px;
+  height: 50px;
+  filter: drop-shadow(0 0 0.75rem rgba(0,0,0,0.8));
+  cursor: default;
 }
 
 
@@ -100,8 +119,8 @@ body{
   width: 100%;
   margin-inline:auto;
   min-height: 550px;
-  height: auto;
-  max-height: 700px;
+  height: 100vh;
+  max-height: 100vh;
   background-color: var(--darkblue01);
   display: grid;
   grid-template-rows: auto auto auto auto;
@@ -147,7 +166,7 @@ body{
 }
 
 .desc{
-  flex: 0 1 472px;
+  flex: 0 1 500px;
 }
 
 
@@ -245,4 +264,92 @@ body{
   transform: scale(1.05);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   background-color: var(--purplehover);
+}
+
+/* About me */
+
+.aboutme-container{
+  width: 100vw;
+  min-height: 100vh;
+  height: max-content;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 0 5rem 0;
+}
+
+.aboutme-title{
+  padding: 0 0 0 20px;
+  font-size: var(--font-size-xl);
+  color: var(--offwhite01);
+  font-family: var(--font-yatra);
+  position: relative;
+  cursor: default;
+}
+
+.justify-left-about{
+  width: 70vw;
+  border-left: 2px solid var(--offwhite);
+}
+
+.aboutme-title ul li{
+  width: max-content;
+  height: max-content;
+}
+
+.aboutme-title ul li::before{
+  content: "";
+  width: 30px;
+  height: 2px;
+  background-color: var(--offwhite01);
+  position: absolute;
+  top: 0px;
+  left: 0;
+  transform: translate(0,30px);
+}
+
+
+.aboutme-desc{
+  width: 70%;
+  padding: 0 0 0 20px;
+  color: var(--offwhite01);
+  font-size: var(--font-size-base);
+  font-family: var(--font-open-sans);
+  display: flex;
+  text-align: justify;
+}
+
+@media only screen and (max-width: 600px) {
+  .justify-left-about{
+    width: 100vw;
+    padding-inline: 1rem;
+    border: none;
+  }
+  .aboutme-title ul li::before{
+    content: "";
+    width: 70px;
+    height: 2px;
+    position: absolute;
+    top: initial;
+    left: 0;
+    bottom: 0;
+    transform: none;
+    transition: all 250ms linear;
+  }
+
+  .aboutme-title ul li:hover::before{
+    width: 120px;
+  }
+  .aboutme-title ul{
+    padding: 0;
+  }
+  .aboutme-title{
+    padding: 0;
+  }
+  .aboutme-title ul li{
+    list-style-type: none;
+  }
+
+  .aboutme-desc{
+    width: 90%;
+  }
 }

@@ -9,7 +9,7 @@ export default function FirstTab() {
           <div className="half-container">
             <div className="justify-left">
               <div className="Name">Abhay Sakariya</div>
-              <div className="Description"><div className="desc">Passenger through space and time, front-end web builder & bittersweet songs enthusiast</div></div>
+              <div className="Description"><div className="desc">Web Developer | Ready To Build user-friendly and efficient web applications</div></div>
             </div>
           </div>
             <LanguageSlide/>
