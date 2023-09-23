@@ -2,13 +2,14 @@ import React from 'react';
 import "../App.css";
 
 export default function AboutMe() {
+    const title = "<About Me />";
   return (
     <>
-        <div className="aboutme-container">
-            <div className="justify-left-about">
-                <div className="aboutme-title">
+        <div className="base-container">
+            <div className="justify-left-base">
+                <div className="base-title">
                     <ul>
-                        <li>About Me</li>
+                        <li>{title}</li>
                     </ul>
                 </div>
                 <div className="aboutme-desc">

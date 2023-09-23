@@ -14,8 +14,11 @@
   --lightRed:#FF6969;
   --offblue:#279EFF;
   --darkblue01:#0c1627;
-  --greyblack:#1C1D20;
+  --grey:#999ba0;
   --purple:#27005D;
+  --orange:#F28C28;
+  --skillstab:#070f1e;
+  --blue05hover:#212752;
   --purplehover: rgba(39, 0, 93,0.75);
 
   --font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
@@ -37,6 +40,7 @@
 /* Navbar */
 body{
   background-color: var(--darkblue01);
+  cursor: url("./img/cursor.png"),default;
 }
 
 .NavbarMain{
@@ -57,10 +61,10 @@ body{
 .Navtitle{
   text-decoration: none;
   font-size: var(--font-size-lg);
-  font-family: var(--font-nowy);
+  font-family: var(--font-yatra);
   color: var(--offwhite);
   margin-left: 1rem;
-  cursor: default;
+  cursor: url("./img/cursor.png");;
 }
 
 .socialIcons{
@@ -77,18 +81,6 @@ body{
   transform: scale(1.1);
 }
 
-.navcontent{
-  display: flex;
-  align-items: center;
-  padding: 0 0 0 1rem;
-}
-
-.navcontent img{
-  width: 50px;
-  height: 50px;
-  filter: drop-shadow(0 0 0.75rem rgba(0,0,0,0.8));
-  cursor: default;
-}
 
 
 /* FirstTAb */
@@ -127,22 +119,45 @@ body{
   gap: 10px;
   grid-template-areas: 
   "name"
-  "desc"
-  "content"
-  "extra";
+  "desc";
+}
+
+.ram{
+  height: fit-content;
+  font-size: var(--font-size-md);
+  margin: 0;
+  padding: 0;
+  flex: 1 0 1%;
+  color: var(--orange);
+}
+
+.ram::before{
+  content: "🙏";
 }
 
 .Name{
   grid-area: name;
   width: 100%;
   height: 100px;
-  font-size: var(--font-size-xxl);
+  font-size: var(--font-size-xxxl);
   font-family: var(--font-acme);
   display: flex;
   justify-content: flex-start;
   color: var(--offwhite01);
-  margin: 8rem 0 0 0;
-  cursor: default;
+  margin: 10rem 0 0 0;
+  cursor: url("./img/cursor.png");;
+  flex-wrap: wrap;
+}
+
+.myname{
+  font-family: var(--font-yatra);
+  color: transparent;
+  flex: 1 0 99%;
+  height: max-content;
+  background: linear-gradient(-45deg, #23a6d5, #23d5ab,var(--orange),var(--lightRed) ,#ee7752, #e73c7e);
+  background-size: 500%;
+  background-clip: text;
+	animation: gradient 7s ease infinite;
 }
 
 .Description{
@@ -150,22 +165,66 @@ body{
   display: flex;
   justify-content: flex-start;
   color: var(--bangani);
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-lg);
   font-weight: bold;
-  font-family: var(--font-neuton);
+  font-family: var(--font-open-sans);
   word-wrap: break-word;
-  margin-block-start: 0.67em;
-  margin-block-end: 0.67em;
-  margin-inline-start: 0;
-  margin-inline-end: 0;
   flex-wrap: wrap;
-  transform: translateY(-30px);
-  margin: 0;
-  cursor: default;
+  margin: 3rem 0 0 0;
+  cursor: url("./img/cursor.png");;
 }
 
 .desc{
-  flex: 0 1 500px;
+  flex: 0 1 780px;
+  letter-spacing: 1px;
+}
+
+.contactbtn-div{
+  margin: 4rem 0 0 0;
+}
+.contactbtn{
+  width: 150px;
+  height: 40px;
+  font-size: var(--font-size-base);
+  border: none;
+  border-radius: 5px;
+  background-color: var(--blue05);
+  color: var(--offwhite01);
+  font-family: var(--font-open-sans);
+  transition: all 250ms linear;
+  z-index: 11;
+  position: relative;
+}
+
+.contactbtn::before{
+  content: "";
+  width: 100%;
+  opacity: 0.5;
+  height: 100%;
+  background-color: var(--blue05);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  border-radius: 5px;
+  transform: translate(6px,6px);
+  transition: all 250ms linear;
+}
+
+.contactbtn:hover::before{
+  transform: translate(9px,9px);
+}
+
+.contactbtn:hover{
+  transform: translate(-3px,-3px);
+}
+
+.contactbtn:active::before{
+  transform: translate(2px,2px);
+}
+
+.contactbtn:active{
+  transform: translate(6px,6px);
 }
 
 
@@ -207,14 +266,14 @@ body{
 
 .FirstSlide ul li{
   flex: 0 0 200px;
-  background-color: var(--purple);
+  background-color: var(--blue05);
   width: 200px;
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  cursor: default;
+  cursor: url("./img/cursor.png");;
   box-shadow: rgba(9, 9, 10, 0.2) 0px 7px 29px 0px;
   transition: 250ms ease-in-out;
 }
@@ -222,7 +281,7 @@ body{
 .FirstSlide > ul > li:hover{
   transform: scale(1.05);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  background-color: var(--purplehover);
+  background-color: var(--blue05hover);
 }
 
 .justScrollIcon{
@@ -247,14 +306,14 @@ body{
 
 .SecondSlide ul li{
   flex: 0 0 300px;
-  background-color: var(--purple);
+  background-color: var(--blue05);
   width: 300px;
   height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  cursor: default;
+  cursor: url("./img/cursor.png");;
   box-shadow: rgba(9, 9, 10, 0.2) 0px 7px 29px 0px;
   transition: 250ms ease-in-out;
 }
@@ -262,49 +321,48 @@ body{
 .SecondSlide > ul > li:hover{
   transform: scale(1.05);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  background-color: var(--purplehover);
+  background-color: var(--blue05hover);
 }
 
 /* About me */
 
-.aboutme-container{
+.base-container{
   width: 100vw;
   min-height: 100vh;
   height: max-content;
   display: flex;
   justify-content: flex-end;
-  margin: 0 0 5rem 0;
 }
 
-.aboutme-title{
+.base-title{
   padding: 0 0 0 20px;
   font-size: var(--font-size-xl);
   color: var(--offwhite01);
   font-family: var(--font-yatra);
   position: relative;
-  cursor: default;
+  cursor: url("./img/cursor.png");;
 }
 
-.justify-left-about{
+.justify-left-base{
   width: 70vw;
   border-left: 2px solid var(--offwhite);
 }
 
-.aboutme-title ul li{
-  width: max-content;
+.base-title ul li{
+  width: fit-content;
   height: max-content;
 }
 
-.aboutme-title ul li::before{
+.base-title ul li::before{
   content: "";
-  width: 30px;
+  width: 40px;
   height: 2px;
   background-color: var(--offwhite01);
   position: absolute;
-  top: 0px;
+  top: 43%;
   left: 0;
-  transform: translate(0,30px);
 }
+
 
 
 .aboutme-desc{
@@ -318,12 +376,12 @@ body{
 }
 
 @media only screen and (max-width: 600px) {
-  .justify-left-about{
+  .justify-left-base{
     width: 100vw;
     padding-inline: 1rem;
     border: none;
   }
-  .aboutme-title ul li::before{
+  .base-title ul li::before{
     content: "";
     width: 70px;
     height: 2px;
@@ -335,20 +393,139 @@ body{
     transition: all 250ms linear;
   }
 
-  .aboutme-title ul li:hover::before{
+  .base-title ul li:hover::before{
     width: 120px;
   }
-  .aboutme-title ul{
+  .base-title ul{
     padding: 0;
   }
-  .aboutme-title{
+  .base-title{
     padding: 0;
   }
-  .aboutme-title ul li{
+  .base-title ul li{
     list-style-type: none;
   }
 
   .aboutme-desc{
     width: 90%;
+  }
+
+  
+}
+
+/* Skills */
+
+.showSkills{
+  width: 90%;
+  padding: 0 0 0 20px;
+  color: var(--offwhite01);
+  margin: 0 0 7rem 0;
+}
+
+.showSkills-title{
+  width: inherit;
+  display: flex;
+  justify-content: center;
+  font-size: var(--font-size-md);
+  font-family: var(--font-yatra);
+  position: relative;
+}
+
+.showSkills-title::before{
+  content: ">_ ";
+  font-family: var(--font-yatra);
+  color: var(--offblue);
+  letter-spacing: -3px;
+  transform: translate(-10px,3px);
+}
+
+.showSkills-title::after{
+  content: "";
+  width: 80%;
+  height: 3px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: var(--offwhite01);
+  transform: translateX(-20px);
+}
+
+.skillsName-container{
+  width: 100%;
+  padding: 0;
+  margin: 1rem 0 0 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  cursor: url("./img/cursor.png");;
+}
+
+.skillsName-Tab{
+  flex: 0 1 300px;
+  height: 60px;
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin: 1rem 1rem 0 0;
+  padding: 30px;
+  background-color: var(--blue05);
+  border-radius: 5px;
+  box-shadow: rgba(5, 5, 22, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  position: relative;
+  transition: transform 250ms linear;
+}
+
+.skillsName-Tab::before{
+  content: "";
+  width: 30%;
+  height: 3px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);	
+  background: linear-gradient(-45deg, #23a6d5, #23d5ab,var(--orange),var(--lightRed) ,#ee7752, #e73c7e);
+  background-size: 400px 400px;
+	animation: gradient 5s ease infinite;
+  transition: width 250ms linear;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.skillsName-Tab:hover::before{
+  width: 100%;
+}
+
+.skillsName-Tab:hover{
+  transform: translate(-5px,-10px);
+  background-color: var(--blue05hover);
+}
+
+.skilltitle{
+  font-size: var(--font-size-md);
+  font-family: var(--font-open-sans);
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+.skilltag{
+  font-size: var(--font-size-sm);
+  font-family: var(--font-open-sans);
+  letter-spacing: 1px;
+  color: var(--grey);
+}
+
+@media only screen and (max-width: 600px) {
+  .showSkills{
+    padding: 0 0 0 20px;
   }
 }
