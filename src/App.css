@@ -41,6 +41,7 @@
 body{
   background-color: var(--darkblue01);
   cursor: url("./img/cursor.png"),default;
+  scroll-behavior: smooth;
 }
 
 .NavbarMain{
@@ -81,6 +82,11 @@ body{
   transform: scale(1.1);
 }
 
+@media only screen and (max-width: 600px) {
+  .socialIcons{
+    display: none;
+  }
+}
 
 
 /* FirstTAb */
@@ -129,6 +135,8 @@ body{
   padding: 0;
   flex: 1 0 1%;
   color: var(--orange);
+  font-family: var(--font-yatra);
+  font-weight: 300;
 }
 
 .ram::before{
@@ -171,7 +179,7 @@ body{
   word-wrap: break-word;
   flex-wrap: wrap;
   margin: 3rem 0 0 0;
-  cursor: url("./img/cursor.png");;
+  cursor: url("./img/cursor.png");
 }
 
 .desc{
@@ -225,6 +233,16 @@ body{
 
 .contactbtn:active{
   transform: translate(6px,6px);
+}
+
+@media only screen and (max-width: 600px) {
+  .Description{
+    transform: translateY(-2rem);
+  }
+
+  .myname{
+    font-size: var(--font-size-xxl);
+  }
 }
 
 
@@ -442,7 +460,7 @@ body{
 .showSkills-title::after{
   content: "";
   width: 80%;
-  height: 3px;
+  height: 1px;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -508,6 +526,7 @@ body{
 .skillsName-Tab:hover{
   transform: translate(-5px,-10px);
   background-color: var(--blue05hover);
+  color: #fff;
 }
 
 .skilltitle{
@@ -522,6 +541,7 @@ body{
   font-family: var(--font-open-sans);
   letter-spacing: 1px;
   color: var(--grey);
+  transform: translateY(-5px);
 }
 
 @media only screen and (max-width: 600px) {
@@ -529,3 +549,70 @@ body{
     padding: 0 0 0 20px;
   }
 }
+
+/* Footer  */
+
+.footer-container{
+  width: 100vw;
+  height: 40vh;
+  background-color: var(--black08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-tagline{
+  font-size: var(--font-size-xl);
+  color: var(--grey);
+  font-family: var(--font-open-sans);
+  font-weight: 500;
+  margin: 1rem 0 0 0;
+  text-align: center;
+}
+
+.footer-copyright{
+  font-size: var(--font-size-base);
+  font-family: var(--font-nowy);
+  color: var(--offwhite);
+  margin: auto 0 1rem 0;
+}
+
+.footer-socialIcons{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: auto 0 0 0;
+  perspective: 1000px;
+}
+
+.footer-socialIcons a{
+  width: 50px;
+  height: 50px;
+  background-color: var(--grey);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  opacity: 0.7;
+  margin: 0 2vw 0 0;
+  transition: all 250ms linear;
+  text-decoration: none;
+  box-shadow: rgba(5, 5, 22, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.footer-socialIcons a svg{
+  transition: all 250ms linear;
+  transform: translateY(0px) translateZ(2rem);
+}
+
+.footer-socialIcons a:hover{
+  scale: 1.1;
+  rotate: x 15deg;
+}
+
+.footer-socialIcons a:hover svg{
+  transform: translateY(-1.3rem) translateZ(10px);
+  rotate: x -15deg;
+}
+
