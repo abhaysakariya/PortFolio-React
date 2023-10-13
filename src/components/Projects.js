@@ -4,6 +4,10 @@ export default function Projects() {
     const title = "<Projects />";
 
     const projectDetails = [
+        {"title":"ScrapA",
+         "desc":"This Is An Usefull Tool For The Web Scraper Who Are Bored Of Writing Code For Different Websites To Scrap The Data Init. ScrapA DO This Task For You Easily Just You Have To Write Few Lines Of Code And Sometime Only One Line Of Code Also....This Will Also Take Care Of File Management And Make File Input / Output Easy For You.... Want To Know How?? Get Started With Me.",
+         "after":"After Completing This Project I'm able to work with Python Classes And Objects And How Pypi Works and How To Deal With Python Packages And Modules.",
+"url":"https://github.com/abhaysakariya/ScrapA","languageused":["PYTHON"]},
         {"title":"SpaceProgram.ai",
         "desc":"This is an AI created using html css javascript and this AI will answer the Question asked to him related to programming field. ",
         "after":"After Completing This Project I'm able To work with Javascript Fetch API and json File in Javascript",
